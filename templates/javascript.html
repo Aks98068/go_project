@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Programming - ePortfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">ePortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fullstack">Full Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/css">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bootstrap">Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/javascript">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <header class="text-center my-5 pt-5">
+            <h1>JavaScript Programming</h1>
+            <p class="lead">Add interactivity and dynamic behavior to your websites</p>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Introduction Section -->
+                <section class="mb-5">
+                    <h2>What is JavaScript?</h2>
+                    <p>JavaScript is a programming language that enables interactive web pages and is an essential part of web applications. It allows you to implement complex features on web pages and create dynamic user experiences.</p>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Basic JavaScript Syntax</h5>
+                            <div class="code-example">
+                                <pre><code class="language-javascript">
+// Variables
+let name = "John";
+const age = 25;
+
+// Functions
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+// Arrow Functions
+const add = (a, b) => a + b;
+
+// Arrays
+const fruits = ["apple", "banana", "orange"];
+
+// Objects
+const person = {
+    name: "John",
+    age: 25,
+    greet() {
+        return `Hello, I'm ${this.name}`;
+    }
+};</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- DOM Manipulation Section -->
+                <section class="mb-5">
+                    <h2>DOM Manipulation</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Working with the DOM</h5>
+                            <div class="code-example">
+                                <pre><code class="language-javascript">
+// Selecting elements
+const element = document.getElementById('myElement');
+const elements = document.getElementsByClassName('myClass');
+const tags = document.getElementsByTagName('div');
+
+// Modifying content
+element.innerHTML = 'New content';
+element.textContent = 'New text';
+
+// Adding/removing classes
+element.classList.add('newClass');
+element.classList.remove('oldClass');
+
+// Creating new elements
+const newElement = document.createElement('div');
+newElement.textContent = 'New element';
+document.body.appendChild(newElement);</code></pre>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-primary" onclick="addNewElement()">Add Element</button>
+                                <button class="btn btn-danger" onclick="removeLastElement()">Remove Last</button>
+                                <div id="elementContainer" class="mt-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Event Handling Section -->
+                <section class="mb-5">
+                    <h2>Event Handling</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Working with Events</h5>
+                            <div class="code-example">
+                                <pre><code class="language-javascript">
+// Event Listeners
+element.addEventListener('click', function(e) {
+    console.log('Clicked!');
+});
+
+// Form Events
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Handle form submission
+});
+
+// Keyboard Events
+document.addEventListener('keydown', function(e) {
+    console.log('Key pressed:', e.key);
+});</code></pre>
+                            </div>
+                            <div class="mt-3">
+                                <div class="mb-3">
+                                    <label class="form-label">Type something:</label>
+                                    <input type="text" class="form-control" id="eventInput">
+                                </div>
+                                <div id="eventOutput" class="p-3 bg-light"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Async Programming Section -->
+                <section class="mb-5">
+                    <h2>Asynchronous Programming</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Promises and Async/Await</h5>
+                            <div class="code-example">
+                                <pre><code class="language-javascript">
+// Promise
+const fetchData = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('Data fetched!');
+        }, 1000);
+    });
+};
+
+// Async/Await
+async function getData() {
+    try {
+        const result = await fetchData();
+        console.log(result);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}</code></pre>
+                            </div>
+                            <div class="mt-3">
+                                <button class="btn btn-primary" onclick="simulateAsyncOperation()">
+                                    Simulate Async Operation
+                                </button>
+                                <div id="asyncOutput" class="mt-3"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Interactive Demo -->
+                <section class="mb-5">
+                    <h2>Interactive JavaScript Demo</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Counter with State Management</h5>
+                            <div class="mb-3">
+                                <button class="btn btn-primary" onclick="incrementCounter()">+</button>
+                                <span id="counterValue" class="mx-3">0</span>
+                                <button class="btn btn-primary" onclick="decrementCounter()">-</button>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-secondary" onclick="resetCounter()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Full Stack Development ePortfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/script.js"></script>
+    <script>
+        // DOM Manipulation Demo
+        function addNewElement() {
+            const container = document.getElementById('elementContainer');
+            const newElement = document.createElement('div');
+            newElement.className = 'alert alert-info';
+            newElement.textContent = `Element ${container.children.length + 1}`;
+            container.appendChild(newElement);
+        }
+
+        function removeLastElement() {
+            const container = document.getElementById('elementContainer');
+            if (container.lastChild) {
+                container.removeChild(container.lastChild);
+            }
+        }
+
+        // Event Handling Demo
+        document.getElementById('eventInput').addEventListener('input', function(e) {
+            document.getElementById('eventOutput').textContent = e.target.value;
+        });
+
+        // Async Programming Demo
+        async function simulateAsyncOperation() {
+            const output = document.getElementById('asyncOutput');
+            output.innerHTML = '<div class="spinner-border text-primary" role="status"></div>';
+            
+            try {
+                const result = await new Promise(resolve => 
+                    setTimeout(() => resolve('Operation completed!'), 2000)
+                );
+                output.innerHTML = `<div class="alert alert-success">${result}</div>`;
+            } catch (error) {
+                output.innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
+            }
+        }
+
+        // Counter Demo
+        let counter = 0;
+        function updateCounterDisplay() {
+            document.getElementById('counterValue').textContent = counter;
+        }
+
+        function incrementCounter() {
+            counter++;
+            updateCounterDisplay();
+        }
+
+        function decrementCounter() {
+            counter--;
+            updateCounterDisplay();
+        }
+
+        function resetCounter() {
+            counter = 0;
+            updateCounterDisplay();
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Development - ePortfolio</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/static/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">ePortfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/fullstack">Full Stack</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/html">HTML</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/css">CSS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bootstrap">Bootstrap</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/javascript">JavaScript</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container main-content">
+        <header class="text-center my-5 pt-5">
+            <h1>Full Stack Development</h1>
+            <p class="lead">Understanding the complete web development stack</p>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Introduction Section -->
+                <section class="mb-5">
+                    <h2>What is Full Stack Development?</h2>
+                    <p>Full Stack Development refers to the end-to-end application software development, including both the front end and back end portions of an application. A full stack web developer has the ability to work on both the front-end and back-end portions of an application.</p>
+                    
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Key Components of Full Stack Development</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <strong>Front-end:</strong> HTML, CSS, JavaScript, and frameworks like React or Angular
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>Back-end:</strong> Server-side languages (Node.js, Python, PHP), databases, and APIs
+                                </li>
+                                <li class="list-group-item">
+                                    <strong>DevOps:</strong> Version control, deployment, and server management
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Example Section -->
+                <section class="mb-5">
+                    <h2>Full Stack Example</h2>
+                    <p>Here's a simple example of how different technologies work together in a full stack application:</p>
+                    
+                    <div class="code-example">
+                        <h5>Front-end (HTML/CSS/JavaScript)</h5>
+                        <pre><code class="language-html">
+&lt;!-- Front-end Code -->
+&lt;div id="userList">&lt;/div>
+
+&lt;script>
+async function fetchUsers() {
+    try {
+        const response = await fetch('/api/users');
+        const users = await response.json();
+        displayUsers(users);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+function displayUsers(users) {
+    const userList = document.getElementById('userList');
+    userList.innerHTML = users
+        .map(user => `&lt;div>${user.name}&lt;/div>`)
+        .join('');
+}
+
+fetchUsers();
+&lt;/script></code></pre>
+                    </div>
+
+                    <div class="code-example mt-4">
+                        <h5>Back-end (Node.js/Express)</h5>
+                        <pre><code class="language-javascript">
+// Back-end Code
+const express = require('express');
+const app = express();
+
+// Database connection (example)
+const users = [
+    { id: 1, name: 'John Doe' },
+    { id: 2, name: 'Jane Smith' }
+];
+
+// API endpoint
+app.get('/api/users', (req, res) => {
+    res.json(users);
+});
+
+app.listen(3000, () => {
+    console.log('Server running on port 3000');
+});</code></pre>
+                    </div>
+                </section>
+
+                <!-- Interactive Demo -->
+                <section class="mb-5">
+                    <h2>Interactive Stack Visualization</h2>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stack-visualization" id="stackViz">
+                                <div class="layer frontend" data-bs-toggle="tooltip" title="User Interface & Client-side Logic">
+                                    Front-end Layer
+                                </div>
+                                <div class="layer backend" data-bs-toggle="tooltip" title="Server-side Processing & Business Logic">
+                                    Back-end Layer
+                                </div>
+                                <div class="layer database" data-bs-toggle="tooltip" title="Data Storage & Retrieval">
+                                    Database Layer
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; 2024 Full Stack Development ePortfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="/static/js/script.js"></script>
+</body>
+</html> 

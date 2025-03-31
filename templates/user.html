@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - ePortfolio</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar-header {
+            padding: 0 20px 20px 20px;
+            border-bottom: 1px solid #455a64;
+        }
+        
+        .sidebar-header h2 {
+            margin: 0;
+            font-size: 22px;
+        }
+        
+        .sidebar-header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+        
+        .user-info {
+            padding: 20px;
+            background-color: #34495e;
+            margin-bottom: 20px;
+        }
+        
+        .user-info h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+        }
+        
+        .user-info p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        .menu-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-left: 4px solid transparent;
+        }
+        
+        .menu-item:hover {
+            background-color: #34495e;
+            border-left: 4px solid #3498db;
+        }
+        
+        .menu-item.active {
+            background-color: #34495e;
+            border-left: 4px solid #3498db;
+        }
+        
+        .logout-btn {
+            margin-top: 20px;
+            padding: 15px 20px;
+            color: #ff6b6b;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            border-left: 4px solid transparent;
+        }
+        
+        .logout-btn:hover {
+            background-color: #34495e;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding: 30px;
+            overflow-y: auto;
+        }
+        
+        .welcome-banner {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .welcome-banner h1 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+        }
+        
+        .welcome-banner p {
+            margin: 0;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .card h2 {
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-size: 18px;
+        }
+        
+        .card p {
+            margin: 0;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 15px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>User Dashboard</h2>
+                <p>ePortfolio System</p>
+            </div>
+            
+            <div class="user-info">
+                <h3>{{.Username}}</h3>
+                <p>{{.Email}}</p>
+            </div>
+            
+            <div class="menu-item active">Dashboard</div>
+            <div class="menu-item">My Profile</div>
+            <div class="menu-item">Employees</div>
+            <div class="menu-item">Settings</div>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+        
+        <div class="main-content">
+            <div class="welcome-banner">
+                <h1>Welcome back, {{.Username}}!</h1>
+                <p>This is your personal dashboard where you can manage your account and view employee data.</p>
+            </div>
+            
+            <div class="card-grid">
+                <div class="card">
+                    <h2>View Employees</h2>
+                    <p>Browse and manage employee information in the system.</p>
+                    <a href="/users" class="btn">View Employees</a>
+                </div>
+                
+                <div class="card">
+                    <h2>My Profile</h2>
+                    <p>Update your personal information and account settings.</p>
+                    <a href="#" class="btn">Edit Profile</a>
+                </div>
+                
+                <div class="card">
+                    <h2>Help & Support</h2>
+                    <p>Get assistance and learn how to use the system effectively.</p>
+                    <a href="#" class="btn">Get Help</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
